@@ -1,0 +1,5 @@
+4
+*0 muscleTonic 4 1 0 
+*1 hpBooster 0 0 6 
+*2 evolveBark 0 7 2 
+*3 booster 2 2 2 

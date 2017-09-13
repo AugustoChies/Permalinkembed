@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{67AC409B-9BDA-4D9D-86C1-D2B9885557CF}</ProjectGuid>
+    <RootNamespace>base</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <ReferencePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../libUnicornio;$(ReferencePath)</ReferencePath>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <ReferencePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../libUnicornio;$(ReferencePath)</ReferencePath>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)-debug</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/I../../libEGL/ %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\libUnicornio\dep\SDL2\include;..\..\libUnicornio\dep\SDL2_image;..\..\libUnicornio\dep\SDL2_mixer;..\..\libUnicornio\dep\SDL2_ttf;..\..\libUnicornio\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>..\..\libUnicornio\lib\win\x86;..\..\libUnicornio\dep\lib\win\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libUnicornio_d.lib;SDL2main.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/I../../libEGL/ %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\libUnicornio\dep\SDL2\include;..\..\libUnicornio\dep\SDL2_image;..\..\libUnicornio\dep\SDL2_mixer;..\..\libUnicornio\dep\SDL2_ttf;..\..\libUnicornio\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>..\..\libUnicornio\lib\win\x86;..\..\libUnicornio\dep\lib\win\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libUnicornio.lib;SDL2main.lib;SDL2.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Aranha.cpp" />
+    <ClCompile Include="Arquivo.cpp" />
+    <ClCompile Include="Ataque.cpp" />
+    <ClCompile Include="Bala.cpp" />
+    <ClCompile Include="Bau.cpp" />
+    <ClCompile Include="Botao.cpp" />
+    <ClCompile Include="Chefe.cpp" />
+    <ClCompile Include="Corte.cpp" />
+    <ClCompile Include="Cyborc.cpp" />
+    <ClCompile Include="GerentedeTelas.cpp" />
+    <ClCompile Include="Hud.cpp" />
+    <ClCompile Include="Inventario.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Jogador.cpp" />
+    <ClCompile Include="Jogo.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mapa.cpp" />
+    <ClCompile Include="Mobilia.cpp" />
+    <ClCompile Include="Monstro.cpp" />
+    <ClCompile Include="Personagem.cpp" />
+    <ClCompile Include="Pistoleiro.cpp" />
+    <ClCompile Include="Plasma.cpp" />
+    <ClCompile Include="Porta.cpp" />
+    <ClCompile Include="Sala.cpp" />
+    <ClCompile Include="Tanker.cpp" />
+    <ClCompile Include="TechnoMago.cpp" />
+    <ClCompile Include="Tela.cpp" />
+    <ClCompile Include="TelaJogo.cpp" />
+    <ClCompile Include="TelaLoad.cpp" />
+    <ClCompile Include="TelaMenu.cpp" />
+    <ClCompile Include="TelaOver.cpp" />
+    <ClCompile Include="TelaRank.cpp" />
+    <ClCompile Include="TelaSelecao.cpp" />
+    <ClCompile Include="TelaWin.cpp" />
+    <ClCompile Include="Wisp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Aranha.h" />
+    <ClInclude Include="Arquivo.h" />
+    <ClInclude Include="Ataque.h" />
+    <ClInclude Include="Bala.h" />
+    <ClInclude Include="Bau.h" />
+    <ClInclude Include="Botao.h" />
+    <ClInclude Include="Chefe.h" />
+    <ClInclude Include="Corte.h" />
+    <ClInclude Include="Cyborc.h" />
+    <ClInclude Include="Entidade.h" />
+    <ClInclude Include="GerentedeTelas.h" />
+    <ClInclude Include="Hud.h" />
+    <ClInclude Include="Inventario.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="Jogador.h" />
+    <ClInclude Include="Jogo.h" />
+    <ClInclude Include="Mapa.h" />
+    <ClInclude Include="Mobilia.h" />
+    <ClInclude Include="Monstro.h" />
+    <ClInclude Include="Personagem.h" />
+    <ClInclude Include="Pistoleiro.h" />
+    <ClInclude Include="Plasma.h" />
+    <ClInclude Include="Porta.h" />
+    <ClInclude Include="Sala.h" />
+    <ClInclude Include="Tanker.h" />
+    <ClInclude Include="TechnoMago.h" />
+    <ClInclude Include="Tela.h" />
+    <ClInclude Include="TelaJogo.h" />
+    <ClInclude Include="TelaLoad.h" />
+    <ClInclude Include="TelaMenu.h" />
+    <ClInclude Include="TelaOver.h" />
+    <ClInclude Include="TelaRank.h" />
+    <ClInclude Include="TelaSelecao.h" />
+    <ClInclude Include="TelaWin.h" />
+    <ClInclude Include="Wisp.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
